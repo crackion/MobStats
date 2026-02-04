@@ -1,0 +1,27 @@
+-- .luacov
+-- Configuration for LuaCov code coverage
+
+return {
+    statsfile = "luacov.stats.out",
+    reportfile = "luacov.report.out",
+
+    -- Include only the modules we want to measure
+    include = {
+        "Utils%.lua",
+        "Presentation/Utils%.lua",
+        "Domain/",
+        "Application/",
+        "Presentation/Drawers/",
+    },
+
+    -- Exclude test files and other parts of the project
+    exclude = {
+        "Tests/",
+        "Tests/Unit/",
+        "Tests/Integration/",
+        "Tests/Support/",
+        "Boot%.lua",
+        "Environment%.lua",
+        "Infrastructure/",
+    },
+}

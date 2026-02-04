@@ -27,9 +27,11 @@ end
 ---@return string
 function strjoin(strings, glue)
     local result = ""
+    local first = true
     for _, s in ipairs(strings) do
-        if result == "" then
+        if first then
             result = s
+            first = false
         else
             result = result .. glue .. s
         end

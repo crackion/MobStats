@@ -72,6 +72,39 @@ local function compact_dto_groups(groups_by_key)
                 value = dto.value,
                 could_be_higher = dto.could_be_higher,
             }}
+        elseif getn(group) == num_of_possible_resists - 1 then
+            -- 5 same resistances, 1 missing (filtered as 0%)
+            -- Find the missing resistance and show "MissingResist 0%, Other X%"
+            local present_ids = {}
+            for _, dto in ipairs(group) do
+                present_ids[dto.label] = true
+            end
+
+            local missing_label = nil
+            for _, display in pairs(ID_TO_DISPLAY) do
+                if not present_ids[display.label] then
+                    missing_label = display.label
+                    break
+                end
+            end
+
+            if missing_label then
+                local other_dto = group[1]
+                return {
+                    {
+                        label = missing_label,
+                        color = ID_TO_DISPLAY[strlower(missing_label)].color,
+                        value = 0,
+                        could_be_higher = false,
+                    },
+                    {
+                        label = "Other",
+                        color = nil,
+                        value = other_dto.value,
+                        could_be_higher = other_dto.could_be_higher,
+                    }
+                }
+            end
         end
     end
 
