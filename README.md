@@ -1,3 +1,5 @@
+![Tests](https://github.com/refaim/MobStats/workflows/Tests/badge.svg)
+
 Vanilla WoW 1.12.1 and Turtle WoW addon. Displays mob stats in a human-friendly form in the game tooltip.
 
 ## Screenshots
@@ -6,6 +8,12 @@ Vanilla WoW 1.12.1 and Turtle WoW addon. Displays mob stats in a human-friendly 
 ![wendigo.png](wendigo.png)
 
 ## Version History
+
+### v1.6 (Feb 5, 2026)
+* Improve resistance display when 5 of 6 resistances are identical
+* Handle unknown mob levels properly
+* Fix nil armor edge case
+* Add test suite with GitHub Actions CI
 
 ### v1.5 (Aug 16, 2025)
 * Support Turtle WoW 1.18.0

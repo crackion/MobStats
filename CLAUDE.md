@@ -34,3 +34,55 @@ All files use `setfenv(1, MobStats)` to work within the addon's isolated namespa
 ## Type Annotations
 
 The codebase uses EmmyLua-style type annotations extensively for development tooling support.
+
+## Testing
+
+The project includes a comprehensive test suite using LuaUnit.
+
+### Running Tests
+
+To run all tests with coverage report:
+
+```bash
+./RunTests.bat
+```
+
+This will:
+- Execute all unit and integration tests
+- Generate a code coverage report using LuaCov
+- Verify that coverage requirements are met
+
+### Test Structure
+
+Tests are organized by type and mirror the source code structure:
+
+```
+Tests/
+├── Unit/                          # Isolated component tests
+│   ├── Domain/                    # Domain value object tests
+│   │   ├── ArmorTest.lua
+│   │   ├── DamageTest.lua
+│   │   ├── MeleeTest.lua
+│   │   ├── MobLevelTest.lua
+│   │   └── ResistanceTest.lua
+│   └── Presentation/
+│       └── Drawers/               # UI drawer tests
+│           ├── ArmorDrawerTest.lua
+│           ├── MeleeDrawerTest.lua
+│           └── ResistancesDrawerTest.lua
+├── Integration/                   # Cross-layer tests
+│   └── Application/
+│       └── ApplicationServiceTest.lua
+├── Support/                       # Test utilities
+│   ├── Mocks/
+│   │   ├── MockEnvironment.lua
+│   │   └── MockTooltipInterface.lua
+│   └── CheckCoverage.lua
+└── RunTests.lua                   # Test entry point
+```
+
+### Test Conventions
+
+- Use exact assertions (assertEquals) rather than partial matches (assertStrContains) to ensure output format is exactly as expected
+- All tests should verify wrap parameter and call count for tooltip interactions
+- Test files should restore any modified global state in tearDown() methods

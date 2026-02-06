@@ -1,0 +1,35 @@
+name: Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Lua 5.1 and LuaRocks
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y lua5.1 luarocks
+
+    - name: Install dependencies
+      run: |
+        sudo luarocks install luaunit
+        sudo luarocks install luacov
+
+    - name: Run tests
+      run: |
+        export LUA_PATH="Tests/?.lua;Tests/Unit/?.lua;Tests/Integration/?.lua;Tests/Support/?.lua;Tests/Support/Mocks/?.lua;;"
+        lua5.1 Tests/RunTests.lua
+
+    - name: Generate coverage report
+      run: luacov
+
+    - name: Check 100% coverage
+      run: lua5.1 Tests/Support/CheckCoverage.lua
