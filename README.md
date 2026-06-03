@@ -7,6 +7,12 @@ Vanilla WoW 1.12.1 and Turtle WoW addon. Displays mob stats in a human-friendly 
 ![boar.png](screenshots/boar.png)
 ![wendigo.png](screenshots/wendigo.png)
 
+## 📸 crackion Screenshots
+
+| Combat Log Scanner | Ability Tracking |
+| :--- | :--- |
+| ![Boar Rushing Charge](screenshots/Boar_Rushing_Charge.png) | ![Wendigo Frost Breath](screenshots/Wendigo_Frost_Breath.png) |
+
 ## Version History
 
 ### v1.7 (Feb 6, 2026)
