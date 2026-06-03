@@ -12,6 +12,9 @@
 ## Notes-zhCN: 在游戏提示框中显示怪物属性
 ## Notes-zhTW: 在遊戲提示框中顯示怪物屬性
 
+# Enables persistent storage for learned mob abilities in the WTF folder
+## SavedVariables: MobStats_SavedSpells
+
 src\Boot.lua
 src\Utils.lua
 src\Environment.lua
@@ -37,3 +40,9 @@ src\Presentation\Drawers\ArmorDrawer.lua
 src\Presentation\Drawers\MeleeDrawer.lua
 src\Presentation\Drawers\ResistancesDrawer.lua
 src\Presentation\TooltipController.lua
+
+# ============================================================================
+# EXTENSIONS & MODULAR PLUGINS
+# ============================================================================
+# Loads the core extension for combat log scanning and tooltip hooks.
+MobSpellsCore.lua
