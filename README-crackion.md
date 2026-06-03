@@ -27,6 +27,14 @@ You can maintain your learned spell database using the native addon slash comman
 
 ---
 
+## 📸 In-Game Screenshots
+
+| Combat Log Scanner | Ability Tracking |
+| :--- | :--- |
+| ![Boar Rushing Charge](screenshots/Boar_Rushing_Charge.png) | ![Wendigo Frost Breath](screenshots/Wendigo_Frost_Breath.png) |
+
+---
+
 ## 📥 Installation (For Players)
 If you want to use this specific extended version with the spell-learning feature:
 
@@ -40,3 +48,5 @@ This extension wouldn't be possible without the incredible foundation and suppor
 
 * **Refaim** — The original creator and lead developer of **MobStats**. Thank you for building such a robust, clean, and well-structured core architecture that allows modular features like this to be integrated seamlessly.
 * **Claude** — For the technical assistance, engineering advice, and optimization of the Lua pattern matching logic used to capture complex combat log events.
+
+* Special thanks to **Gemini** (Google) for the guidance in architectural design, modular implementation strategies, and technical troubleshooting throughout the development of this extension."
